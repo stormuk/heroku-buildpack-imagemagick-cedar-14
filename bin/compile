@@ -58,7 +58,7 @@ done
 
 echo "Testing imagemagick installation" | arrow
 export LD_LIBRARY_PATH="$BUILD_DIR/$LIB_PATH:$LD_LIBRARY_PATH"
-echo "Lib path = #{LD_LIBRARY_PATH}"
+echo "Lib path = $LD_LIBRARY_PATH"
 
 $BUILD_DIR/$BIN_PATH/identify -list format | indent
 
