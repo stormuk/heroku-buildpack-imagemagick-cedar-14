@@ -25,9 +25,9 @@ arrow() {
 }
 
 APT_CACHE_DIR="$CACHE_DIR/apt/cache"
-echo "APT_CACHE_DIR = #{APT_CACHE_DIR}"
+echo "APT_CACHE_DIR = $APT_CACHE_DIR"
 APT_STATE_DIR="$CACHE_DIR/apt/state"
-echo "APT_STATE_DIR = #{APT_STATE_DIR}"
+echo "APT_STATE_DIR = $APT_STATE_DIR"
 
 mkdir -p "$APT_CACHE_DIR/archives/partial"
 mkdir -p "$APT_STATE_DIR/lists/partial"
@@ -37,7 +37,7 @@ echo "APT_OPTIONS = #{APT_OPTIONS}"
 
 apt-get $APT_OPTIONS update | indent
 
-echo "Installing imagemagick ${IMAGEMAGICK_VERSION}" | arrow
+echo "Installing imagemagick $IMAGEMAGICK_VERSION" | arrow
 echo "apt-get $APT_OPTIONS -y -d install imagemagick=$IMAGEMAGICK_VERSION | indent"
 apt-get $APT_OPTIONS -y -d install imagemagick=$IMAGEMAGICK_VERSION | indent
 
