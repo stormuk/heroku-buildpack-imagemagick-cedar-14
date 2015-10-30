@@ -38,8 +38,8 @@ echo "APT_OPTIONS = #{APT_OPTIONS}"
 apt-get $APT_OPTIONS update | indent
 
 echo "Installing imagemagick $IMAGEMAGICK_VERSION" | arrow
-echo "apt-get $APT_OPTIONS -y -d install imagemagick=$IMAGEMAGICK_VERSION | indent"
-apt-get $APT_OPTIONS -y -d install imagemagick=$IMAGEMAGICK_VERSION | indent
+echo "apt-get $APT_OPTIONS -y -d install imagemagick=$IMAGEMAGICK_VERSION libmagickwand=$IMAGEMAGICK_VERSION | indent"
+apt-get $APT_OPTIONS -y -d install imagemagick=$IMAGEMAGICK_VERSION libmagickwand=$IMAGEMAGICK_VERSION | indent
 
 mkdir -p $BUILD_DIR/.apt
 
