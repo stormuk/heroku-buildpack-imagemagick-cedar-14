@@ -72,6 +72,8 @@ EOF
 
 source $BUILD_DIR/.profile.d/z_imagemagick.sh
 
+cd /
 mkdir imbuild
 cd imbuild
 apt-get -o debug::nolocking=true -o Dir::Etc::SourceList=$SOURCE_LIST -o dir::cache=$APT_CACHE_DIR -o dir::state=$APT_STATE_DIR -y download imagemagick=$IMAGEMAGICK_VERSION libmagickwand-dev=$IMAGEMAGICK_VERSION
+cd ..
