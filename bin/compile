@@ -70,10 +70,7 @@ export MAGICK_CODER_FILTER_PATH="\$HOME/$MAGICK_CODER_FILTER_PATH"
 export MAGICK_CODER_MODULE_PATH="\$HOME/$MAGICK_CODER_MODULE_PATH"
 EOF
 
-source $BUILD_DIR/.profile.d/z_imagemagick.sh
-
-cd /app
-mkdir imbuild
-cd imbuild
+mkdir -p $BUILD_DIR/im
+cd $BUILD_DIR/im
 apt-get -o debug::nolocking=true -o Dir::Etc::SourceList=$SOURCE_LIST -o dir::cache=$APT_CACHE_DIR -o dir::state=$APT_STATE_DIR -y download imagemagick=$IMAGEMAGICK_VERSION libmagickwand-dev=$IMAGEMAGICK_VERSION
-cd ..
+cd
